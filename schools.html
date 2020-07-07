@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chicago Public School Data</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Chicago Public School Data</h1>
+        <p>Put shit about schools here</p>
+        <h5>School name:</h5>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      </div>
+  </div>
+      <div class="col-md-7">
+        <div id="plot1"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="plot2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-primary">
+            <div class="panel-heading text-center">
+              <h3 class="panel-title">School Info</h3>
+            </div>
+            <div id="moreSchoolInfo" class="panel-body"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="schoolinfo.js"></script>
+
+</body>
+
+</html>

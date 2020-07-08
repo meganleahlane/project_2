@@ -1,0 +1,118 @@
+/* STYLES */
+
+body {
+    background: #f1f1f1;
+    font-family: "Century Gothic";
+  }
+
+h1 {
+    font-family: "Century Gothic"; 
+    color: #0033a0;
+    font-size: 36px;
+  }
+
+h2 {
+    font-family: "Century Gothic"; 
+    color: #0033a0;
+    font-size: 30px;
+  }
+
+h3 {
+    font-family: "Century Gothic"; 
+    color: #0033a0;
+    font-size: 24px;
+  }
+
+h4 {
+    font-family: "Arial"; 
+    color: #0033a0;
+    font-size: 18px;
+  }
+
+p {
+    font-family: "Arial"; 
+    color: black;
+    font-size: 14px;
+  }
+
+.ol {
+  font-family: "Arial"; 
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+  /* NAVIGATIOBN BAR */
+
+/* Adjust color when shrinking
+@media (max-width: 992px) {
+    #myNavBar {
+      background-color: #0033a0 !important;
+    }
+  }
+*/
+
+/* Giving our navbar some padding and a background color */
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: Transparent;
+  outline:#3c7ab0 dotted 0px;
+}
+
+.navbar-grey {
+  color: #333333;
+  font-weight: bold;
+}
+
+
+/* navbar  background - white*/
+.navbar { 
+  min-height: 100px !important; 
+  background-color: #FFF !important; 
+  border-bottom: #DDD 1px solid !important;
+}
+
+/* navbar brand responsive */
+.navbar-brand {
+  padding: 10px 40px 8px 15px; 
+  height:100px;
+}
+
+.navbar-header {
+  margin: 20px 0px;
+  width: 150px;
+  height: auto;
+}
+
+.navbar-brand-image {width: 175px; height:77px;}
+.navbar-toggle { margin-top: 22px; }
+.toggbutton {font-size: .7em; line-height:1em; display:block; font-weight:bold;}
+  
+.btn-primary {
+    color: #fff;
+    background-color: #3c7ab0;
+    border-color: #3c7ab0;
+    padding: 10px;
+    font
+  }
+
+.whitebox  {
+     background-color: #FFF;
+     margin-top: 20px;
+     padding: 20px;
+  }
+
+/* Making our navbar li's inline-block elements this makes it so we can have multiple on the same line. Floats could have been used too */
+  .navbar li {
+    display: inline-block;
+    padding: 5px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: whitesmoke;
+    border-radius: 3px;
+  }
+  
+ 

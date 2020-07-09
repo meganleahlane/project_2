@@ -1,0 +1,20 @@
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+  #map,
+  body,
+  html {
+    height: 100%;
+  }
+  
+
+  .info {
+    background-color: rgba(231, 230, 228, 0.753);
+    padding: 5px;
+    border-width: 2px;
+    border-color: black;
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

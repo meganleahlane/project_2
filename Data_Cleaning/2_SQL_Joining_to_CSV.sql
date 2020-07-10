@@ -4,7 +4,7 @@
 --SELECT * from public."SY2019";
 
 SELECT  school_id, year, short_name, school_type, primary_category, 
-	address, city, state, zip, phone, progress_report_year, 
+	address, city, state, zip, phone, ' ' website, progress_report_year, 
 	student_growth_rating, student_attainment_rating, 
 	growth_reading_grades_tested_pct_es, growth_math_grades_tested_pct_es, 
 	attainment_reading_pct_es, attainment_math_pct_es, 
@@ -20,7 +20,7 @@ SELECT  school_id, year, short_name, school_type, primary_category,
 	FROM public."SY2016"
 UNION
 SELECT school_id, year, short_name, school_type, primary_category, 
-	address, city, state, zip, phone, progress_report_year, 
+	address, city, state, zip, phone, website, progress_report_year, 
 	student_growth_rating, student_attainment_rating, 
 	growth_reading_grades_tested_pct_es, growth_math_grades_tested_pct_es, 
 	attainment_reading_pct_es, attainment_math_pct_es, 
@@ -36,7 +36,7 @@ SELECT school_id, year, short_name, school_type, primary_category,
 	FROM public."SY2017"
 UNION
 SELECT school_id, year, short_name, school_type, primary_category, 
-	' ' address, ' ' city, ' ' state, ' ' zip, phone, progress_report_year, 
+	' ' address, ' ' city, ' ' state, ' ' zip, phone, website, progress_report_year, 
 	student_growth_rating, student_attainment_rating, 
 	growth_reading_grades_tested_pct_es, growth_math_grades_tested_pct_es, 
 	attainment_reading_pct_es, attainment_math_pct_es, 
@@ -52,7 +52,7 @@ SELECT school_id, year, short_name, school_type, primary_category,
 	FROM public."SY2018"
 UNION
 SELECT school_id, year, short_name, school_type, primary_category, 
-	address, city, state, zip, phone, progress_report_year, 
+	address, city, state, zip, phone, website, progress_report_year, 
 	student_growth_rating, student_attainment_rating, 
 	growth_reading_grades_tested_pct_es, growth_math_grades_tested_pct_es, 
 	attainment_reading_pct_es, attainment_math_pct_es, 

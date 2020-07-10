@@ -1,10 +1,12 @@
-function getColor(school) {
-    return      school == "ES" ? '#ffcc00' :
-                school == "MS" ? '#cc0000' :
-                school == "HS" ? '#009900' :
-                                 '#009933' ;
-           
-    }
+function getColor(rating) {
+    return      rating == "Far Below Expectations"  ? '#990000' :
+                rating == "Below Expectations"      ? '#FF9933' :
+                rating == "Below Average"           ? '#993399' :
+                rating == "Average"                 ? '#ffcc00' :
+                rating == "Above Average"           ? '#009933' :
+                rating == "Far Above Average"       ? '#0066cc' :
+                                                      '#0099cc' ;        
+                };
 
 // Adding tile layer that will be the background to the map
 var streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -13,8 +15,8 @@ var streetMap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
-    accessToken: API_KEY
-});
+    accessToken: "pk.eyJ1IjoibWlnbGVzaWE4OSIsImEiOiJja2JudGY0Yzcxd2FyMnZxbmRnNHdpaThiIn0.QWa_jTYDjzsLlgff5gKGsQ"
+            });
 
 var layers = {
     ES: new L.LayerGroup(),
@@ -41,7 +43,6 @@ var overlays = {
     "High Schools" : layers.HS
 }
 
-
 //Create a control for our layers, add our overlay layers to it
 L.control.layers(null, overlays).addTo(myMap);
 
@@ -52,9 +53,9 @@ var legend = L.control({
 legend.onAdd = function() {
 
     var div = L.DomUtil.create('div', 'info legend'),
-    labels = ["ES", "MS", "HS"];
+    labels = ["Far Below Expectations", "Below Expectations", "Below Average", "Average", "Above Average", "Far Above Average"];
 
-    div.innerHTML += '<h3>CPS Schools</h3>'
+    div.innerHTML += '<h3>Student Attainment Rating</h3>'
     
     for (var i = 0; i< labels.length; i++) {
         div.innerHTML += 
@@ -68,26 +69,43 @@ legend.onAdd = function() {
 
 legend.addTo(myMap);
 
-
 var icons = {
-    ES: L.ExtraMarkers.icon({
-        icon: "ion-settings",
-        iconColor: "white",
-        markerColor: "yellow",
-        shape: "circle"
-    }),
-    MS: L.ExtraMarkers.icon({
+    far_below_expectation: L.ExtraMarkers.icon({
         icon: "ion-settings",
         iconColor: "white",
         markerColor: "red",
         shape: "circle"
     }),
-    HS: L.ExtraMarkers.icon({
+    below_expectations: L.ExtraMarkers.icon({
+        icon: "ion-settings",
+        iconColor: "white",
+        markerColor: "orange",
+        shape: "circle"
+    }),
+    below_average: L.ExtraMarkers.icon({
+        icon: "ion-settings",
+        iconColor: "white",
+        markerColor: "violet",
+        shape: "circle"
+    }),
+    average: L.ExtraMarkers.icon({
+        icon: "ion-settings",
+        iconColor: "white",
+        markerColor: "yellow",
+        shape: "circle"
+    }),
+    above_average: L.ExtraMarkers.icon({
         icon: "ion-settings",
         iconColor: "white",
         markerColor: "green",
         shape: "circle"
-    })
+    }),
+    far_above_average: L.ExtraMarkers.icon({
+        icon: "ion-settings",
+        iconColor: "white",
+        markerColor: "blue",
+        shape: "circle"
+    }),
 };
 
 function createMarkers(response) {
@@ -107,15 +125,42 @@ function createMarkers(response) {
        else {
             schoolCategory = "HS";
         }
+
+        var attainment = school.student_attainment_rating;
+        var studentAtt = "";
+
+        if (attainment == "FAR BELOW EXPECTATIONS") {
+            studentAtt = "far_below_expectation";
+        }
+
+        else if (attainment == "BELOW EXPECTATIONS") {
+                studentAtt = "below_expectations";
+        }
+
+        else if (attainment == "BELOW AVERAGE") {
+                studentAtt = "below_average";
+        }
+
+        else if (attainment == "AVERAGE") {
+                studentAtt = "average";
+        }
+
+        else if (attainment == "ABOVE AVERAGE") {
+                studentAtt = "above_average";
+        }
+
+        else {
+            studentAtt = "far_above_average";
+        }
    
     var schoolMarker = L.marker([school.school_latitude, school.school_longitude], {
-        icon: icons[schoolCategory]
+        icon: icons[studentAtt]
     });   
           
     schoolMarker.addTo(layers[schoolCategory]);
 
     schoolMarker.bindPopup("<h3> School Name: " + school.long_name + "<h3><hr><p> Address: " + school.address + "</p>" +
-    "<p> Student Attainment: " + school.student_attainment_rating + "</p>").addTo(myMap);
+    "<p> Student Attainment: " + school.student_attainment_rating + "<p> School Type: " + school.school_type + "</p>").addTo(myMap);
 
    }
  

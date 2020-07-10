@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Chicago Public Schools Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="landing_style.css">
+  </head>
+
+<!--NAVIGATION BAR-->
+<body>
+  <nav id="myNavBar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mr-auto" href="landing_index.html">
+      <img src="images/cps-logo-200.png" class="d-inline-block align-top" alt="CPS Data Home"></a>
+    <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </a>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-grey navbar-nav navbar-right ml-auto">
+        <li>
+          <a class="nav-link" href="map.html">School Locator</a>
+        </li>
+        <li>
+          <a class="nav-link" href="school_perf.html">School Performance</a>
+        </li>
+        <li>
+          <a class="nav-link" href="info.html">School Information</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+    
+    <!-- // where the header starts  -->
+    <div class="container">
+      <div class="row">
+          <div class="col-md-9">
+            <div class="whitebox">
+              <h2 class="text-left">For every child, in every neighborhood </h2>
+              <hr>
+                <!-- <img width=280 height= 400 style="float: left; padding: 20px;" src="images/Chicago_map.jpg" alt="parents"> -->
+              <p>Chicago Public Schools is the third largest school district in the United States with more than 600 schools and serves 361,000 children. Our vision is to provide you with information of all the schools for every child, in every neighborhood.
+                Many school’s may require health screens prior to entering their physical spaces.
+                Please call ahead or visit any department's website to get additional details, or visit chicago.gov/covid-19   
+              </p>
+           </div></div>
+              <div class="col-md-3">
+                <img width=225 height= 250 style="float: left; padding: 20px;" src="images/Chicago_map.jpg" alt="parents">
+                <!-- <img width=280 height= 400 style="float: left; padding: 20px;" src="images/Schools-CPS.jpg" alt="parents"> -->
+              </div>     
+      </div>
+    </div>
+
+    
+
+ <div class="row">
+  <div class="col-md-12 text-center table-responsive">
+    <h4 class="text-center">Select a school for more information</h4>
+    <!-- <p>Select School</p>
+  </div>
+</div> -->
+  <select id="selDataset"></select>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <table id="school-table" class="table table-striped">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        </div>
+    </div>
+</div>
+
+<div class="container"></div>
+<address>
+  
+      <b>Chicago Public Schools</b>
+
+   <br> 
+   
+      42 W. Madison St. Chicago, IL 60602
+
+   <br>
+   
+   <a>773-553-4444</a></span>
+  </address> 
+      
+<div>
+  <a href="https://twitter.com/ChiPubSchools"><img src="images/twitter-icon.png" alt="Twitterr" class="icon-photo"></a>
+  <a href="https://www.instagram.com/chipubschools/"><img src="images/instagram-icon.png" alt="Insta" class="icon-photo"></a>
+  <a href="https://www.youtube.com/user/ChiPubSchools"><img src="images/youtube-icon.png" alt="Youtube" class="icon-photo"></a>
+  <a href="https://www.linkedin.com/company/chicago-public-schools/"><img src="images/linkedin-icon.png" alt="Linkedinnn" class="icon-photo"></a>
+
+</div>
+    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+<script type="text/javascript" src="info.js"></script>
+
+<!-- <footer class="footer">
+  <span class="bottom">Stay Connected</span>
+</footer>  -->
+
+</body>
+</html>

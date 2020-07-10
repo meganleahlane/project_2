@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Chicago Public School Data</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="landing_style.css">
+</head>
+
+<!--NAVIGATION BAR-->
+<body>
+  <nav id="myNavBar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mr-auto" href="landing_index.html">
+      <img src="images/cps-logo-200.png" class="d-inline-block align-top" alt="CPS Data Home"></a>
+    <a class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </a>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="nav navbar-grey navbar-nav navbar-right ml-auto">
+        <li>
+          <a class="nav-link" href="map.html">School Locator</a>
+        </li>
+        <li>
+          <a class="nav-link" href="school_perf.html">School Performance</a>
+        </li>
+        <li>
+          <a class="nav-link" href="info.html">School Information</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!--CONTENT-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3>Select a school for more information</h3>
+        <select id="selDataset" onchange="optionChanged(this.value)">
+          <option>&lt;select school&gt;</option>
+        </select>
+        <div>&nbsp;</div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-7">
+        <div id="plot1"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="plot2"></div>
+      </div>
+      </div>
+      
+    <div class="row">
+        <div class="col-md-12 text-center table-responsive">
+              <h4 class="text-center">School Info</h4>
+            <table id="school-table" class="table table-striped table-bordered table-data">
+              <thead>
+                <tr>
+                </tr>
+              </thead>
+                <tbody>
+                </tbody>
+            </table>
+      </div>
+  </div>
+</div> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="school_perf.js"></script>
+
+</body>
+
+</html>

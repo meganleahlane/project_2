@@ -1,6 +1,6 @@
 var options = {
   strings: ['Quick Stats 2019', 'All Schools in CPS'],
-  typeSpeed: 40,
+  typeSpeed: 90,
   loop: true
 };
 
